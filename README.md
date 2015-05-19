@@ -1,7 +1,8 @@
 leveldb_server
 ===============
-Leveldb simple udp server and test client.Data serialization with protobuf,and event loop by libev.
-Test on Kali Linux.
+    Leveldb simple udp server and test client.
+    Data serialization with protobuf,and event loop by libev.
+    Test on Kali Linux.
 
 #####1.Install necessary libraries
     sudo apt-get install libleveldb-dev libprotobuf7 libprotobuf-dev protobuf-compiler libev-dev
