@@ -4,7 +4,7 @@ Leveldb simple udp server and test client.Data serialization with protobuf,and e
 Test on Kali Linux.
 
 #####1.Install necessary libraries
-    sudo apt-install libleveldb-dev libprotobuf7 libprotobuf-dev protobuf-compiler libev4 libev-dev
+    sudo apt-get install libleveldb-dev libprotobuf7 libprotobuf-dev protobuf-compiler libev-dev
 #####2.generate protobuf files---This step can be ignored
     cd pb/
     protoc --cpp_out=./ ldbdata.proto
