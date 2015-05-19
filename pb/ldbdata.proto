@@ -1,0 +1,18 @@
+package ldbdata;
+
+message Request {
+  enum Cmd {
+	GET  = 1;
+	PUT  = 2;
+	DELETE = 3;
+  }
+  required Cmd cmd = 1;
+  optional string key = 2;
+  optional string value = 3;
+  optional bool synflag = 4;
+}
+
+message Response {
+  required uint32 retcode = 1[default=1];
+  optional string value = 2;
+}
