@@ -49,6 +49,12 @@ void CLdbUdpServer::StartLoop()
 
 void CLdbUdpServer::ProcessCallback(ev::io &wather, int revents)
 {
+    if (EV_ERROR & revents)
+    {
+        std::cout << "got invalid event!" << std::endl;
+        return;
+    }
+
     ProcessRequest();
 
     ProcessResponse();
