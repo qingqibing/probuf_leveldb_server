@@ -38,8 +38,14 @@ void CPutCommand::execute()
         return;
     }
 
+    bool bSynFlag = false;
+    if (m_oRequest.has_synflag())
+    {
+        bSynFlag = m_oRequest.synflag();
+    }
+
     leveldb::WriteOptions write_options;
-    write_options.sync = false;
+    write_options.sync = bSynFlag;
 
     m_status = m_pLdb->Put(write_options, sKey, sValue);
     if (!m_status.ok())

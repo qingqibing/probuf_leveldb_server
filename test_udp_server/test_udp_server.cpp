@@ -2,6 +2,9 @@
 
 using namespace ldbserver;
 
+#define LDB_PATH    ("/root")
+#define LDB_FILE    ("test.ldb")
+
 #define UDP_HOST ("127.0.0.1")
 #define UDP_PORT (6789)
 
@@ -9,7 +12,7 @@ int main(int argc, char* argv[])
 {
     std::cout << "Enter UdpServer...." << std::endl;
 
-    CLdbUdpServer *pLdbserver = new CLdbUdpServer();
+    CLdbUdpServer *pLdbserver = new CLdbUdpServer(LDB_PATH, LDB_FILE);
     if (NULL == pLdbserver)
     {
         return -1;

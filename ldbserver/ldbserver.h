@@ -25,6 +25,7 @@ namespace ldbserver
     {
     public:
         CLdbServer();
+        CLdbServer(const std::string& sFolder, const std::string& sDbName);
         virtual ~CLdbServer();
 
         virtual int CreateServer(const char *ip, unsigned short usPort, int iBackLog=10)=0;

@@ -9,24 +9,23 @@ using namespace ldbserver;
 using namespace ldbdata;
 using namespace std;
 
-#define LDB_PATH    ("/root")
-#define LDB_FILE    ("test.ldb")
-
 CLdbServer::CLdbServer()
+{
+}
+
+CLdbServer::CLdbServer(const std::string& sFolder, const std::string& sDbName)
 {
     m_iSockFd = -1;
     bzero(&m_sockaddr, sizeof(sockaddr));
 
-    COpenCommand *pOenCmd = new COpenCommand();
-    leveldb::DB* pLdb = pOenCmd->GetLdbHandler(LDB_PATH, LDB_FILE);
+    COpenCommand oOpenCmd;
+    leveldb::DB* pLdb = oOpenCmd.GetLdbHandler(sFolder, sDbName);
     if (pLdb != NULL)
     {
-        m_pPutCmd = new CPutCommand(pLdb);
-        m_pGetCmd = new CGetCommand(pLdb);
+        m_pPutCmd    = new CPutCommand(pLdb);
+        m_pGetCmd    = new CGetCommand(pLdb);
         m_pDeleteCmd = new CDeleteCommand(pLdb);
     }
-    delete pOenCmd;
-    pOenCmd = NULL;
 }
 
 CLdbServer::~CLdbServer()

@@ -7,6 +7,11 @@ CLdbUdpServer::CLdbUdpServer()
 {
 }
 
+CLdbUdpServer::CLdbUdpServer(const std::string& sFolder, const std::string& sDbName):
+    CLdbServer(sFolder, sDbName)
+{
+}
+
 CLdbUdpServer::~CLdbUdpServer()
 {
 }
