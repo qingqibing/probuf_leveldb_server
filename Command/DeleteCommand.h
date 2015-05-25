@@ -2,11 +2,12 @@
 #define _DELETE_COMMAND_H
 
 #include "Command.h"
+
 class CDeleteCommand : public CCommand
 {
 public:
     CDeleteCommand();
-    CDeleteCommand(leveldb::DB* pLdb);
+    explicit CDeleteCommand(leveldb::DB* pLdb);
     virtual ~CDeleteCommand();
     void execute();
 };

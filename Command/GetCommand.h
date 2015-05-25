@@ -7,7 +7,7 @@ class CGetCommand : public CCommand
 {
 public:
     CGetCommand();
-    CGetCommand(leveldb::DB* pLdb);
+    explicit CGetCommand(leveldb::DB* pLdb);
     virtual ~CGetCommand();
     void execute();
 };

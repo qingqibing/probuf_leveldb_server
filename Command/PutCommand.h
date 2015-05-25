@@ -2,11 +2,12 @@
 #define _PUT_COMMAND_H_
 
 #include "Command.h"
+
 class CPutCommand : public CCommand
 {
 public:
     CPutCommand();
-    CPutCommand(leveldb::DB* pLdb);
+    explicit CPutCommand(leveldb::DB* pLdb);
     virtual ~CPutCommand();
     void execute();
 };
