@@ -10,7 +10,6 @@ public:
     virtual ~COpenCommand();
     void execute();
 
-private:
     leveldb::DB* GetLdbHandler(const std::string& sFolder, const std::string& sDbName);
 };
 
